@@ -1,4 +1,49 @@
 #include "Produs.hpp"
+#include <string>
+#include <iostream>
+
+Produs::Produs(char *denumire, float pret, int stoc, char *furnizor){
+    this->pret = pret;
+    this->stoc = stoc;
+    int len = strlen(denumire) + 1;
+    this->denumire = (char *)malloc(len);
+    strcpy(this->denumire, denumire);
+    len = strlen(furnizor) + 1;
+    this->furnizor = (char *)malloc(len);
+    strcpy(this->furnizor, furnizor);
+}
+Produs::Produs(const Produs &p){
+    std::cout<<"copiem produsul "<<p.denumire<<std::endl;
+    this->pret = p.pret;
+    this->stoc = p.stoc;
+    int len = strlen(p.denumire) + 1;
+    this->denumire = (char *)malloc(len);
+    strcpy(this->denumire, p.denumire);
+    len = strlen(p.furnizor) + 1;
+    this->furnizor = (char *)malloc(len);
+    strcpy(this->furnizor, p.furnizor);
+}
+
+Produs *Produs::operator=(const Produs &p){
+    std::cout<<"assignment produsul "<<p.denumire<<std::endl;
+    this->pret = p.pret;
+    this->stoc = p.stoc;
+    int len = strlen(p.denumire) + 1;
+    this->denumire = (char *)malloc(len);
+    strcpy(this->denumire, p.denumire);
+    len = strlen(p.furnizor) + 1;
+    this->furnizor = (char *)malloc(len);
+    strcpy(this->furnizor, p.furnizor);
+    return this;
+}
+
+Produs::~Produs(){
+    std::cout<<"stergem produsul " << denumire<<std::endl;
+    if(denumire != NULL)
+        free(denumire);
+    if(furnizor != NULL)
+        free(furnizor);
+}
 
 bool Produs::scade_stoc(){
     return scade_stoc(1);
@@ -8,4 +53,8 @@ bool Produs::scade_stoc(int cantitate){
         return false;
     this->stoc--;
     return true;
+}
+void Produs::afiseaza(){
+    std::cout << "Produsul " << denumire << ": pret=" << pret;
+    std::cout << " stoc=" << stoc << " furnizor=" << furnizor << std::endl;
 }

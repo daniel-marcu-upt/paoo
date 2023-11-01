@@ -5,19 +5,21 @@ class Produs{
     public:
         char *denumire;
         float pret;
-        char *descriere;
 
-    private:
+    protected:
         int stoc;
         char *furnizor;
 
     public:
-        Produs();
+        Produs(){}
+        Produs(char *denumire, float pret, int stoc, char *furnizor);
+        Produs(const Produs &p);
+        Produs *operator=(const Produs &p);
         ~Produs();
         bool scade_stoc();
         bool scade_stoc(int cantitate);
         void seteaza_stoc(int cantitate){this->stoc=cantitate;}
-
+        virtual void afiseaza();
     private:
 };
 

@@ -6,5 +6,12 @@ class Rechizita : public Produs{
         char *categorie;
     private:
 
+    public:
+        Rechizita(){}
+        Rechizita(char *denumire, float pret, int stoc, char *furnizor, char *categorie);
+        Rechizita(const Rechizita &p);
+        Rechizita *operator=(const Rechizita &p);
+        ~Rechizita();
+        void afiseaza();
 };
 #endif
