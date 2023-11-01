@@ -22,11 +22,7 @@
     - denumire
     - descriere  
     - titlu
-    - tip coperta: cartonata/necartonata
-    - isbn
     - autor
-    - nr pagini
-    - gen
     - pret
     - nr_stoc (privat) 
     - furnizor (privat)
@@ -34,5 +30,6 @@
     - denumire
     - descriere  
     - pret
+    - categorie
     - nr_stoc (privat)
     - furnizor (privat)
