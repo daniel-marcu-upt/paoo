@@ -14,6 +14,7 @@ class Produs{
         Produs(){}
         Produs(char *denumire, float pret, int stoc, char *furnizor);
         Produs(const Produs &p);
+        Produs(Produs &&p);
         Produs *operator=(const Produs &p);
         ~Produs();
         bool scade_stoc();

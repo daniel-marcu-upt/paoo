@@ -17,7 +17,7 @@ Carte::Carte(char *denumire, float pret, int stoc, char *furnizor, char *autor){
     strcpy(this->autor, autor);
 }
 Carte::Carte(const Carte &p){
-    std::cout<<"copiem cartea "<<p.denumire<<std::endl;
+    //std::cout<<"copiem cartea "<<p.denumire<<std::endl;
     this->pret = p.pret;
     this->stoc = p.stoc;
     int len = strlen(p.denumire) + 1;
@@ -30,9 +30,27 @@ Carte::Carte(const Carte &p){
     this->autor = (char *)malloc(len);
     strcpy(this->autor, p.autor);
 }
+Carte::Carte(Carte &&p){
+    std::cout<<"copiem cartea "<<p.denumire<<std::endl;
+    this->pret = p.pret;
+    this->stoc = p.stoc;
+    int len = strlen(p.denumire) + 1;
+    this->denumire = (char *)malloc(len);
+    strcpy(this->denumire, p.denumire);
+    len = strlen(p.furnizor) + 1;
+    this->furnizor = (char *)malloc(len);
+    strcpy(this->furnizor, p.furnizor);
+    len = strlen(p.autor) + 1;
+    this->autor = (char *)malloc(len);
+    strcpy(this->autor, p.autor);
+    
+    p.autor = nullptr;
+    p.denumire = nullptr;
+    p.furnizor = nullptr;
+}
 
 Carte *Carte::operator=(const Carte &p){
-    std::cout<<"assignment cartea "<<p.denumire<<std::endl;
+    //std::cout<<"assignment cartea "<<p.denumire<<std::endl;
     this->pret = p.pret;
     this->stoc = p.stoc;
     int len = strlen(p.denumire) + 1;
@@ -48,7 +66,7 @@ Carte *Carte::operator=(const Carte &p){
 }
 
 Carte::~Carte(){
-    std::cout<<"stergem cartea " << denumire<<std::endl;
+    //std::cout<<"stergem cartea " << denumire<<std::endl;
     if(autor != NULL)
         free(autor);
 }

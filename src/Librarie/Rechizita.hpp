@@ -10,6 +10,7 @@ class Rechizita : public Produs{
         Rechizita(){}
         Rechizita(char *denumire, float pret, int stoc, char *furnizor, char *categorie);
         Rechizita(const Rechizita &p);
+        Rechizita(Rechizita &&p);
         Rechizita *operator=(const Rechizita &p);
         ~Rechizita();
         void afiseaza();
