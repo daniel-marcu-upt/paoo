@@ -17,7 +17,7 @@ Carte::Carte(char *denumire, float pret, int stoc, char *furnizor, char *autor){
     strcpy(this->autor, autor);
 }
 Carte::Carte(const Carte &p){
-    //std::cout<<"copiem cartea "<<p.denumire<<std::endl;
+    std::cout<<"copiem cartea "<<p.denumire<<std::endl;
     this->pret = p.pret;
     this->stoc = p.stoc;
     int len = strlen(p.denumire) + 1;
@@ -31,7 +31,7 @@ Carte::Carte(const Carte &p){
     strcpy(this->autor, p.autor);
 }
 Carte::Carte(Carte &&p){
-    std::cout<<"copiem cartea "<<p.denumire<<std::endl;
+    std::cout<<"mutam cartea "<<p.denumire<<std::endl;
     this->pret = p.pret;
     this->stoc = p.stoc;
     int len = strlen(p.denumire) + 1;
@@ -66,13 +66,17 @@ Carte *Carte::operator=(const Carte &p){
 }
 
 Carte::~Carte(){
-    //std::cout<<"stergem cartea " << denumire<<std::endl;
+    std::cout<<"stergem cartea " << denumire<<std::endl;
     if(autor != NULL)
         free(autor);
+    if(denumire != NULL)
+        free(denumire);
+    if(furnizor != NULL)
+        free(furnizor);
 }
 
 void Carte::afiseaza(){
-    std::cout << "Rechizita " << denumire << " de " << autor;
+    std::cout << "Cartea " << denumire << " de " << autor;
     std::cout << ": pret=" << pret;
     std::cout << " stoc=" << stoc << " furnizor=" << furnizor << std::endl;
 }

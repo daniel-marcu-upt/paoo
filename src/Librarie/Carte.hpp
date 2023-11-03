@@ -12,6 +12,7 @@ class Carte : public Produs{
         Carte *operator=(const Carte &p);
         ~Carte();
         void afiseaza();
+        float pret_redus(){std::cout<<"pret carte\n";return pret*0.75;}
 };
 
 #endif

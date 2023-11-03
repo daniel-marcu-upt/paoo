@@ -13,7 +13,7 @@ Produs::Produs(char *denumire, float pret, int stoc, char *furnizor){
     strcpy(this->furnizor, furnizor);
 }
 Produs::Produs(const Produs &p){
-    //std::cout<<"copiem produsul "<<p.denumire<<std::endl;
+    // std::cout<<"copiem produsul "<<p.denumire<<std::endl;
     this->pret = p.pret;
     this->stoc = p.stoc;
     int len = strlen(p.denumire) + 1;
@@ -25,7 +25,7 @@ Produs::Produs(const Produs &p){
 }
 
 Produs::Produs(Produs &&p){
-    //std::cout<<"mutam produsul "<<p.denumire<<std::endl;
+    // std::cout<<"mutam produsul "<<p.denumire<<std::endl;
     this->pret = p.pret;
     this->stoc = p.stoc;
     int len = strlen(p.denumire) + 1;
@@ -53,7 +53,7 @@ Produs *Produs::operator=(const Produs &p){
 }
 
 Produs::~Produs(){
-    //std::cout<<"stergem produsul " << denumire<<std::endl;
+    std::cout<<"stergem produsul " << denumire<<std::endl;
     if(denumire != NULL)
         free(denumire);
     if(furnizor != NULL)

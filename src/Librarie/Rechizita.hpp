@@ -14,5 +14,6 @@ class Rechizita : public Produs{
         Rechizita *operator=(const Rechizita &p);
         ~Rechizita();
         void afiseaza();
+        float pret_redus(){std::cout<<"pret rechizita\n";return pret*0.85;}
 };
 #endif

@@ -66,9 +66,13 @@ Rechizita *Rechizita::operator=(const Rechizita &p){
 }
 
 Rechizita::~Rechizita(){
-    //std::cout<<"stergem rechizita " << denumire<<std::endl;
+    std::cout<<"stergem rechizita " << denumire<<std::endl;
     if(categorie != NULL)
         free(categorie);
+    if(denumire != NULL)
+        free(denumire);
+    if(furnizor != NULL)
+        free(furnizor);
 }
 
 void Rechizita::afiseaza(){

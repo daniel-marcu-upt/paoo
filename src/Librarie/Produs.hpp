@@ -1,7 +1,9 @@
 #ifndef _PRODUS
 #define _PRODUS
+#include <iostream>
+#include "BlackFriday.hpp"
 
-class Produs{
+class Produs: public BlackFriday{
     public:
         char *denumire;
         float pret;
@@ -21,6 +23,7 @@ class Produs{
         bool scade_stoc(int cantitate);
         void seteaza_stoc(int cantitate){this->stoc=cantitate;}
         virtual void afiseaza();
+        virtual float pret_redus(){std::cout<<"pret produs\n";return pret;}
     private:
 };
 
