@@ -1,18 +1,19 @@
 #include <iostream>
-#include "Librarie/Librarie.hpp"
+#include "Librarie/Magazin.hpp"
 
 using namespace std;
+using namespace Librarie;
 
 int main(){
-    Librarie l1("libraria1");
+    Magazin l1("libraria1");
     Carte c1("cartea1", 15, 5, "RAO", "Autor1");
     Carte c2("cartea2", 25, 15, "RAO", "Autor2");
     Rechizita r1("Creion mecanic", 10, 50, "Rotring", "Instrumente de scris");
 
     //pt copy constructor
-    //Carte c3=c1;
+    Carte c3=c1;
     //move constructor
-    //Carte c4(std::move(c3));
+    Carte c4(std::move(c3));
 
     l1.adauga_produs(&c1);
     l1.adauga_produs(&c2);
@@ -21,7 +22,6 @@ int main(){
     l1.afiseaza();
     cout<<"----------------------------\n";
 
-    Librarie l2 = l1;
 
     float pret = l1.cumpara("cartea2", 5);
     cout<<"cumpara normal\n";
@@ -48,9 +48,7 @@ int main(){
     cout<<"----------------------------\n";
     l1.afiseaza();
     cout<<"----------------------------\n";
-    //aici se pare ca da
-    l2.afiseaza();
-    cout<<"gata, destructori"<<"\n";
+
 
     return 0;
 }

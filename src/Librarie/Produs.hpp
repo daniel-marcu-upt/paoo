@@ -3,29 +3,31 @@
 #include <iostream>
 #include "BlackFriday.hpp"
 
-class Produs: public BlackFriday{
-    public:
-        char *denumire;
-        float pret;
+namespace Librarie{
 
-    protected:
-        int stoc;
-        char *furnizor;
+    class Produs: public BlackFriday{
+        public:
+            char *denumire;
+            float pret;
 
-    public:
-        Produs(){}
-        Produs(char *denumire, float pret, int stoc, char *furnizor);
-        Produs(const Produs &p);
-        Produs(Produs &&p);
-        Produs *operator=(const Produs &p);
-        ~Produs();
-        bool scade_stoc();
-        bool scade_stoc(int cantitate);
-        void seteaza_stoc(int cantitate){this->stoc=cantitate;}
-        virtual void afiseaza();
-        virtual float pret_redus(){std::cout<<"pret produs\n";return pret;}
-    private:
-};
+        protected:
+            int stoc;
+            char *furnizor;
 
+        public:
+            Produs(){}
+            Produs(char *denumire, float pret, int stoc, char *furnizor);
+            Produs(const Produs &p);
+            Produs(Produs &&p);
+            Produs *operator=(const Produs &p);
+            ~Produs();
+            bool scade_stoc();
+            bool scade_stoc(int cantitate);
+            void seteaza_stoc(int cantitate){this->stoc=cantitate;}
+            virtual void afiseaza();
+            virtual float pret_redus(){std::cout<<"pret produs\n";return pret;}
+        private:
+    };
+}
 
 #endif

@@ -13,7 +13,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 add_subdirectory(Librarie)
 add_executable(LibrarieTest main.cpp)
 
-target_link_libraries(LibrarieTest PUBLIC Librarie)
+target_link_libraries(LibrarieTest PUBLIC Magazin)
 target_link_libraries(LibrarieTest PUBLIC Carte)
 target_link_libraries(LibrarieTest PUBLIC Produs)
 target_link_libraries(LibrarieTest PUBLIC Rechizita)
