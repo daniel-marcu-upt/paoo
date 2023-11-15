@@ -1,7 +1,7 @@
 #ifndef _PRODUS
 #define _PRODUS
 #include <iostream>
-#include "BlackFriday.hpp"
+#include "../BlackFriday/BlackFriday.hpp"
 
 namespace Librarie{
 

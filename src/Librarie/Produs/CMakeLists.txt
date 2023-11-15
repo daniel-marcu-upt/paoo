@@ -1,0 +1,1 @@
+add_library(Produs STATIC Produs.cpp)

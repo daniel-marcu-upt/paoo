@@ -1,0 +1,1 @@
+add_library(Carte STATIC Carte.cpp)

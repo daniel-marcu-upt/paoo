@@ -1,10 +1,9 @@
-#include "Carte.hpp"
+#include "Produs.hpp"
 #include <string>
 #include <iostream>
 
 namespace Librarie{
-
-    Carte::Carte(char *denumire, float pret, int stoc, char *furnizor, char *autor){
+    Produs::Produs(char *denumire, float pret, int stoc, char *furnizor){
         this->pret = pret;
         this->stoc = stoc;
         int len = strlen(denumire) + 1;
@@ -13,12 +12,9 @@ namespace Librarie{
         len = strlen(furnizor) + 1;
         this->furnizor = (char *)malloc(len);
         strcpy(this->furnizor, furnizor);
-        len = strlen(autor) + 1;
-        this->autor = (char *)malloc(len);
-        strcpy(this->autor, autor);
     }
-    Carte::Carte(const Carte &p){
-        std::cout<<"copiem cartea "<<p.denumire<<std::endl;
+    Produs::Produs(const Produs &p){
+        // std::cout<<"copiem produsul "<<p.denumire<<std::endl;
         this->pret = p.pret;
         this->stoc = p.stoc;
         int len = strlen(p.denumire) + 1;
@@ -27,12 +23,10 @@ namespace Librarie{
         len = strlen(p.furnizor) + 1;
         this->furnizor = (char *)malloc(len);
         strcpy(this->furnizor, p.furnizor);
-        len = strlen(p.autor) + 1;
-        this->autor = (char *)malloc(len);
-        strcpy(this->autor, p.autor);
     }
-    Carte::Carte(Carte &&p){
-        std::cout<<"mutam cartea "<<p.denumire<<std::endl;
+
+    Produs::Produs(Produs &&p){
+        // std::cout<<"mutam produsul "<<p.denumire<<std::endl;
         this->pret = p.pret;
         this->stoc = p.stoc;
         int len = strlen(p.denumire) + 1;
@@ -41,17 +35,13 @@ namespace Librarie{
         len = strlen(p.furnizor) + 1;
         this->furnizor = (char *)malloc(len);
         strcpy(this->furnizor, p.furnizor);
-        len = strlen(p.autor) + 1;
-        this->autor = (char *)malloc(len);
-        strcpy(this->autor, p.autor);
-        
-        p.autor = nullptr;
+
         p.denumire = nullptr;
         p.furnizor = nullptr;
     }
 
-    Carte *Carte::operator=(const Carte &p){
-        //std::cout<<"assignment cartea "<<p.denumire<<std::endl;
+    Produs *Produs::operator=(const Produs &p){
+        //std::cout<<"assignment produsul "<<p.denumire<<std::endl;
         this->pret = p.pret;
         this->stoc = p.stoc;
         int len = strlen(p.denumire) + 1;
@@ -60,19 +50,12 @@ namespace Librarie{
         len = strlen(p.furnizor) + 1;
         this->furnizor = (char *)malloc(len);
         strcpy(this->furnizor, p.furnizor);
-        len = strlen(p.autor) + 1;
-        this->autor = (char *)malloc(len);
-        strcpy(this->autor, p.autor);
         return this;
     }
 
-    Carte::~Carte(){
-        if(autor != NULL){
-            free(autor);
-            autor = NULL;
-        }
+    Produs::~Produs(){
         if(denumire != NULL){
-            std::cout<<"stergem cartea " << denumire<<std::endl;
+            std::cout<<"stergem produsul " << denumire<<std::endl;
             free(denumire);
             denumire = NULL;
         }
@@ -82,9 +65,18 @@ namespace Librarie{
         }
     }
 
-    void Carte::afiseaza(){
-        std::cout << "Cartea " << denumire << " de " << autor;
-        std::cout << ": pret=" << pret;
+    bool Produs::scade_stoc(){
+        return scade_stoc(1);
+    }
+    bool Produs::scade_stoc(int cantitate){
+        if(this->stoc<cantitate)
+            return false;
+        this->stoc-=cantitate;
+        return true;
+    }
+    void Produs::afiseaza(){
+        std::cout << "Produsul " << denumire;
+        std::cout << " pret=" << pret;
         std::cout << " stoc=" << stoc << " furnizor=" << furnizor << std::endl;
     }
 }

@@ -1,6 +1,6 @@
 #ifndef _RECHIZITA
 #define _RECHIZITA
-#include "Produs.hpp"
+#include "../Produs/Produs.hpp"
 namespace Librarie{
 
     class Rechizita : public Produs{

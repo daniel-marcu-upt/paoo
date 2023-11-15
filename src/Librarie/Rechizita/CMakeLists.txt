@@ -1,0 +1,1 @@
+add_library(Rechizita STATIC Rechizita.cpp)

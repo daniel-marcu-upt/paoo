@@ -73,7 +73,7 @@ namespace Librarie{
             categorie = NULL;
         } 
         if(denumire != NULL){
-            std::cout<<"stergem rechizita " << denumire<<std::endl;
+            // std::cout<<"stergem rechizita " << denumire<<std::endl;
             free(denumire);
             denumire = NULL;
         }

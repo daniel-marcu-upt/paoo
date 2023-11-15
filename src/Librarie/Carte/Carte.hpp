@@ -1,7 +1,8 @@
 #ifndef _CARTE
 #define _CARTE
-#include "Produs.hpp"
+#include "../Produs/Produs.hpp"
 namespace Librarie{
+    
     class Carte : public Produs{
         public:
             char *autor;
