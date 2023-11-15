@@ -4,6 +4,9 @@ project(Librarie VERSION 1.0)
 
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
+add_definitions(-D_CRT_SECURE_NO_WARNINGS)
+add_definitions(-W3)
+
 
 add_subdirectory(Librarie)
 add_subdirectory(Librarie/Carte)

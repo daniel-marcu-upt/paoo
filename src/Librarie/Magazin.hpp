@@ -35,9 +35,9 @@ namespace Librarie{
     };
     template <typename T>
     Magazin<T>::Magazin(char *denumire){
-        int len = strlen(denumire) + 1;
+        int len = (int)(int)strlen(denumire) + 1;
         this->denumire = (char *)malloc(len);
-        strcpy(this->denumire, denumire);
+        strncpy(this->denumire, denumire, len);
     }
 
     template <typename T>
@@ -82,9 +82,9 @@ namespace Librarie{
     template <typename T>
     Magazin<T>::Magazin(const Magazin &p){
         //std::cout<<"copiem libraria "<< p.denumire << std::endl;
-        int len = strlen(p.denumire) + 1;
+        int len = (int)(int)strlen(p.denumire) + 1;
         this->denumire = (char *)malloc(len);
-        strcpy(this->denumire, p.denumire);
+        strncpy(this->denumire, p.denumire, len);
         
         for(Produs* i : p.lista_produse){
             Produs *i1 = new Produs(*i);
@@ -98,9 +98,9 @@ namespace Librarie{
     template <typename T>
     Magazin<T>::Magazin(Magazin &&p){
         //std::cout<<"mutam libraria "<< p.denumire << std::endl;
-        int len = strlen(p.denumire) + 1;
+        int len = (int)(int)strlen(p.denumire) + 1;
         this->denumire = (char *)malloc(len);
-        strcpy(this->denumire, p.denumire);
+        strncpy(this->denumire, p.denumire, len);
         
         for(Produs* i : p.lista_produse){
             Produs *i1 = new Produs(*i);
@@ -119,9 +119,9 @@ namespace Librarie{
     template <typename T>
     Magazin<T> *Magazin<T>::operator=(const Magazin &p){
         //std::cout<<"assignment libraria "<<p.denumire<<std::endl;
-        int len = strlen(p.denumire) + 1;
+        int len = (int)(int)strlen(p.denumire) + 1;
         this->denumire = (char *)malloc(len);
-        strcpy(this->denumire, p.denumire);
+        strncpy(this->denumire, p.denumire, len);
 
         for(Produs* i : p.lista_produse){
             Produs *i1 = new Produs(*i);

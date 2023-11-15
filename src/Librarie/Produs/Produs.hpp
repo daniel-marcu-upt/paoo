@@ -25,7 +25,7 @@ namespace Librarie{
             bool scade_stoc(int cantitate);
             void seteaza_stoc(int cantitate){this->stoc=cantitate;}
             virtual void afiseaza();
-            virtual float pret_redus(){std::cout<<"pret produs\n";return pret;}
+            virtual float pret_redus(){std::cout<<"pret produs\n";return (float)pret;}
         private:
     };
 }

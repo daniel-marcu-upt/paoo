@@ -6,10 +6,10 @@ namespace Librarie{
     Produs::Produs(char *denumire, float pret, int stoc, char *furnizor){
         this->pret = pret;
         this->stoc = stoc;
-        int len = strlen(denumire) + 1;
+        int len = (int)strlen(denumire) + 1;
         this->denumire = (char *)malloc(len);
         strcpy(this->denumire, denumire);
-        len = strlen(furnizor) + 1;
+        len = (int)strlen(furnizor) + 1;
         this->furnizor = (char *)malloc(len);
         strcpy(this->furnizor, furnizor);
     }
@@ -17,10 +17,10 @@ namespace Librarie{
         // std::cout<<"copiem produsul "<<p.denumire<<std::endl;
         this->pret = p.pret;
         this->stoc = p.stoc;
-        int len = strlen(p.denumire) + 1;
+        int len = (int)strlen(p.denumire) + 1;
         this->denumire = (char *)malloc(len);
         strcpy(this->denumire, p.denumire);
-        len = strlen(p.furnizor) + 1;
+        len = (int)strlen(p.furnizor) + 1;
         this->furnizor = (char *)malloc(len);
         strcpy(this->furnizor, p.furnizor);
     }
@@ -29,10 +29,10 @@ namespace Librarie{
         // std::cout<<"mutam produsul "<<p.denumire<<std::endl;
         this->pret = p.pret;
         this->stoc = p.stoc;
-        int len = strlen(p.denumire) + 1;
+        int len = (int)strlen(p.denumire) + 1;
         this->denumire = (char *)malloc(len);
         strcpy(this->denumire, p.denumire);
-        len = strlen(p.furnizor) + 1;
+        len = (int)strlen(p.furnizor) + 1;
         this->furnizor = (char *)malloc(len);
         strcpy(this->furnizor, p.furnizor);
 
@@ -44,10 +44,10 @@ namespace Librarie{
         //std::cout<<"assignment produsul "<<p.denumire<<std::endl;
         this->pret = p.pret;
         this->stoc = p.stoc;
-        int len = strlen(p.denumire) + 1;
+        int len = (int)strlen(p.denumire) + 1;
         this->denumire = (char *)malloc(len);
         strcpy(this->denumire, p.denumire);
-        len = strlen(p.furnizor) + 1;
+        len = (int)strlen(p.furnizor) + 1;
         this->furnizor = (char *)malloc(len);
         strcpy(this->furnizor, p.furnizor);
         return this;

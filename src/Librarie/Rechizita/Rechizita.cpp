@@ -7,13 +7,13 @@ namespace Librarie{
     Rechizita::Rechizita(char *denumire, float pret, int stoc, char *furnizor, char *categorie){
         this->pret = pret;
         this->stoc = stoc;
-        int len = strlen(denumire) + 1;
+        int len = (int)(int)strlen(denumire) + 1;
         this->denumire = (char *)malloc(len);
         strcpy(this->denumire, denumire);
-        len = strlen(furnizor) + 1;
+        len = (int)(int)strlen(furnizor) + 1;
         this->furnizor = (char *)malloc(len);
         strcpy(this->furnizor, furnizor);
-        len = strlen(categorie) + 1;
+        len = (int)(int)strlen(categorie) + 1;
         this->categorie = (char *)malloc(len);
         strcpy(this->categorie, categorie);
     }
@@ -21,13 +21,13 @@ namespace Librarie{
         //std::cout<<"copiem rechizita "<<p.denumire<<std::endl;
         this->pret = p.pret;
         this->stoc = p.stoc;
-        int len = strlen(p.denumire) + 1;
+        int len = (int)(int)strlen(p.denumire) + 1;
         this->denumire = (char *)malloc(len);
         strcpy(this->denumire, p.denumire);
-        len = strlen(p.furnizor) + 1;
+        len = (int)(int)strlen(p.furnizor) + 1;
         this->furnizor = (char *)malloc(len);
         strcpy(this->furnizor, p.furnizor);
-        len = strlen(p.categorie) + 1;
+        len = (int)(int)strlen(p.categorie) + 1;
         this->categorie = (char *)malloc(len);
         strcpy(this->categorie, p.categorie);
     }
@@ -36,13 +36,13 @@ namespace Librarie{
         //std::cout<<"mutam rechizita "<<p.denumire<<std::endl;
         this->pret = p.pret;
         this->stoc = p.stoc;
-        int len = strlen(p.denumire) + 1;
+        int len = (int)(int)strlen(p.denumire) + 1;
         this->denumire = (char *)malloc(len);
         strcpy(this->denumire, p.denumire);
-        len = strlen(p.furnizor) + 1;
+        len = (int)(int)strlen(p.furnizor) + 1;
         this->furnizor = (char *)malloc(len);
         strcpy(this->furnizor, p.furnizor);
-        len = strlen(p.categorie) + 1;
+        len = (int)(int)strlen(p.categorie) + 1;
         this->categorie = (char *)malloc(len);
         strcpy(this->categorie, p.categorie);
 
@@ -55,13 +55,13 @@ namespace Librarie{
         //std::cout<<"assignment rechizita "<<p.denumire<<std::endl;
         this->pret = p.pret;
         this->stoc = p.stoc;
-        int len = strlen(p.denumire) + 1;
+        int len = (int)(int)strlen(p.denumire) + 1;
         this->denumire = (char *)malloc(len);
         strcpy(this->denumire, p.denumire);
-        len = strlen(p.furnizor) + 1;
+        len = (int)(int)strlen(p.furnizor) + 1;
         this->furnizor = (char *)malloc(len);
         strcpy(this->furnizor, p.furnizor);
-        len = strlen(p.categorie) + 1;
+        len = (int)(int)strlen(p.categorie) + 1;
         this->categorie = (char *)malloc(len);
         strcpy(this->categorie, p.categorie);
         return this;

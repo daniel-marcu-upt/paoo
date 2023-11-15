@@ -14,7 +14,7 @@ namespace Librarie{
             Carte *operator=(const Carte &p);
             ~Carte();
             void afiseaza();
-            float pret_redus(){std::cout<<"pret carte\n";return pret*0.75;}
+            float pret_redus(){std::cout<<"pret carte\n";return (float)(pret*0.75);}
     };
 }
 #endif

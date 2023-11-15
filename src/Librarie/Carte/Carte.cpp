@@ -7,13 +7,13 @@ namespace Librarie{
     Carte::Carte(char *denumire, float pret, int stoc, char *furnizor, char *autor){
         this->pret = pret;
         this->stoc = stoc;
-        int len = strlen(denumire) + 1;
+        int len = (int)strlen(denumire) + 1;
         this->denumire = (char *)malloc(len);
         strcpy(this->denumire, denumire);
-        len = strlen(furnizor) + 1;
+        len = (int)strlen(furnizor) + 1;
         this->furnizor = (char *)malloc(len);
         strcpy(this->furnizor, furnizor);
-        len = strlen(autor) + 1;
+        len = (int)strlen(autor) + 1;
         this->autor = (char *)malloc(len);
         strcpy(this->autor, autor);
     }
@@ -21,13 +21,13 @@ namespace Librarie{
         // std::cout<<"copiem cartea "<<p.denumire<<std::endl;
         this->pret = p.pret;
         this->stoc = p.stoc;
-        int len = strlen(p.denumire) + 1;
+        int len = (int)strlen(p.denumire) + 1;
         this->denumire = (char *)malloc(len);
         strcpy(this->denumire, p.denumire);
-        len = strlen(p.furnizor) + 1;
+        len = (int)strlen(p.furnizor) + 1;
         this->furnizor = (char *)malloc(len);
         strcpy(this->furnizor, p.furnizor);
-        len = strlen(p.autor) + 1;
+        len = (int)strlen(p.autor) + 1;
         this->autor = (char *)malloc(len);
         strcpy(this->autor, p.autor);
     }
@@ -35,13 +35,13 @@ namespace Librarie{
         // std::cout<<"mutam cartea "<<p.denumire<<std::endl;
         this->pret = p.pret;
         this->stoc = p.stoc;
-        int len = strlen(p.denumire) + 1;
+        int len = (int)strlen(p.denumire) + 1;
         this->denumire = (char *)malloc(len);
         strcpy(this->denumire, p.denumire);
-        len = strlen(p.furnizor) + 1;
+        len = (int)strlen(p.furnizor) + 1;
         this->furnizor = (char *)malloc(len);
         strcpy(this->furnizor, p.furnizor);
-        len = strlen(p.autor) + 1;
+        len = (int)strlen(p.autor) + 1;
         this->autor = (char *)malloc(len);
         strcpy(this->autor, p.autor);
         
@@ -54,13 +54,13 @@ namespace Librarie{
         //std::cout<<"assignment cartea "<<p.denumire<<std::endl;
         this->pret = p.pret;
         this->stoc = p.stoc;
-        int len = strlen(p.denumire) + 1;
+        int len = (int)strlen(p.denumire) + 1;
         this->denumire = (char *)malloc(len);
         strcpy(this->denumire, p.denumire);
-        len = strlen(p.furnizor) + 1;
+        len = (int)strlen(p.furnizor) + 1;
         this->furnizor = (char *)malloc(len);
         strcpy(this->furnizor, p.furnizor);
-        len = strlen(p.autor) + 1;
+        len = (int)strlen(p.autor) + 1;
         this->autor = (char *)malloc(len);
         strcpy(this->autor, p.autor);
         return this;
